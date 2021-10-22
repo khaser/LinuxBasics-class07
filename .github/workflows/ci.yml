@@ -34,7 +34,7 @@ jobs:
       - name: Task 2
         run: ghc --version | tee ghc-version.txt
       - name: Task 4
-        uses: actions/task4
+        uses: actions/task4@v1
         with:
           filename: task04-result
       - run: echo "autograding emulator"
