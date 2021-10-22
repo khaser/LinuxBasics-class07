@@ -4,6 +4,10 @@ inputs:
   filename:
     required: true
 
+outputs:
+  time:
+    decsription: "Descri"
+
 runs:
   steps:
     - shell: bash
