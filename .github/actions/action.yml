@@ -6,4 +6,5 @@ inputs:
 
 runs:
   steps:
-    - run: touch ${{ inputs.filename }} 
+    - shell: bash
+      run: touch ${{ inputs.filename }} 
