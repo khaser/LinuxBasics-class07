@@ -10,6 +10,7 @@ jobs:
   date-time-log:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Printing to log
         run: date >> push.log
       - name: Commit files
