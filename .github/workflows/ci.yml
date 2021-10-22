@@ -34,7 +34,7 @@ jobs:
       - name: Task 2
         run: ghc --version | tee ghc-version.txt
       - name: Task 4
-        uses: ./.github/actions
+        uses: ./.github/actions/task04@task
         with:
           filename: task04-result
       - run: echo "autograding emulator"
