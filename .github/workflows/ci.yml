@@ -5,25 +5,31 @@ on:
   - pull_request
 
 jobs:
+
+
   task07:
     runs-on: ubuntu-latest
     steps:
       - run: echo "TODO"
 
-  check-gcc-version:
+  check-ghc-version:
     runs-on: ubuntu-latest
     steps:
       - run: ghc --version | tee ghc-version.txt
+      - uses: actions/upload-artifact@v2.2.4
+        with:
+          name: first-artifact
+          path: ghc-version.txt
 
   build:
     name: Autograding
     runs-on: ubuntu-latest
     needs:
       - task07
-      - check-gcc-version
+      - check-ghc-version
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - run: apt install cmatrix
+      - run: sudo apt install cmatrix
       - run: echo "autograding emulator"
