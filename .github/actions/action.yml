@@ -9,6 +9,7 @@ outputs:
     description: "Descri"
 
 runs:
+  using: "composite"
   steps:
+    - run: touch ${{ inputs.filename }} 
     - shell: bash
-      run: touch ${{ inputs.filename }} 
