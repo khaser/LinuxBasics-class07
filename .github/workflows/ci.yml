@@ -29,6 +29,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - run: sudo apt install cmatrix
-      - run: ghc --version | tee ghc-version.txt
+      - name: Task 1
+        run: sudo apt install cmatrix
+      - name: Task 2
+        run: ghc --version | tee ghc-version.txt
+      - name: Task 4
+        uses: actions/task4
+        with:
+          filename: task04-result
       - run: echo "autograding emulator"
