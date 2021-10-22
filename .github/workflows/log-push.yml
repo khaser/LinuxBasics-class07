@@ -7,7 +7,18 @@ on:
   - pull_request
 
 jobs:
-  dummy:
+  date-time-log:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "TODO"
+      - name: Printing to log
+        run: date >> push.log
+      - name: Commit files
+        run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "github-actions"
+        git add .
+        git commit -m "log push"
+      - name: Push commit
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TOKEN }}
