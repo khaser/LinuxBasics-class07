@@ -25,7 +25,6 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - task07
-      - check-ghc-version
     steps:
       - uses: actions/checkout@v2
         with:

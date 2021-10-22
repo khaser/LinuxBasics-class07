@@ -18,6 +18,7 @@ jobs:
         git config --local user.name "github-actions"
         git add .
         git commit -m "log push"
+        shell: bash
       - name: Push commit
         uses: ad-m/github-push-action@master
         with:
